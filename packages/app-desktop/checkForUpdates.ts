@@ -177,7 +177,7 @@ export default async function checkForUpdates(inBackground: boolean, parentWindo
 
 		if (compareVersions(release.version, packageInfo.version) <= 0) {
 			if (!checkInBackground_) {
-				await bridge().showMessageBox(_('Current version is up-to-date.'));
+				await bridge().showInfoMessageBox(_('Current version is up-to-date.'));
 			}
 		} else {
 			const shouldSkip = checkInBackground_ && await isSkippedVersion(release.version);
